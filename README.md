@@ -11,7 +11,7 @@ Use this workshop to create a full demo of Azure API Management using a variety 
 
 ## Instructions
 
-1. [Prerequisites](/00_prerequistes/README.md)
+1. [Prerequisites](/00_prerequisites/README.md)
 
 2. [Setup Azure API Management](/01_apim-instance/README.md)
 
@@ -22,3 +22,7 @@ Use this workshop to create a full demo of Azure API Management using a variety 
 5. [Cluster Config](/04_cluster-info/README.md)
 
 6. [Setup Azure Arc](/05_azure-arc/README.md)
+
+7. TODO: Setup a Product for the Private APIs
+
+8. TODO: Setup an API for the New API

@@ -17,7 +17,7 @@ Values might look like:
 
 ## Get the Install and Config Info
 
-![Image of API Self-Hosted Gateway Creation](/assets/apim-gateway-screenshot-2.png)
+![Image of API Self-Hosted Deployment](/assets/apim-gateway-screenshot-2.png)
 
 After you have provisioned the gateway, you will be able to find the _Deployment... Kubernetes..._ tab with code and information about deploying the gateway.
 
