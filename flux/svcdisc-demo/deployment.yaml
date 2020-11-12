@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: svcdisc-demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svcdiscdeployment
+  namespace: svcdisc-demo
+  labels:
+    app: svcdiscapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svcdiscapp
+  template:
+    metadata:
+      labels:
+        app: svcdiscapp
+    spec:
+      containers:
+      - name: svcdiscpod
+        image: cwiederspan/akssvcdisc:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: "IDENTIFIER"
+          value: "Service #1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svcdiscsvc
+  namespace: svcdisc-demo
+spec:
+  selector:
+    app: svcdiscapp
+  ports:
+    - port: 80
