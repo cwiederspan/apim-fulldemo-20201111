@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apim-gateway-env
+data:
+  config.service.endpoint: "https://<<YOUR_APIM_NAME>>.management.azure-api.net/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<<YOUR_RG_NAME>>/providers/Microsoft.ApiManagement/service/<<YOUR_APIM_NAME>>?api-version=2019-12-01"
