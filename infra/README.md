@@ -1,16 +1,6 @@
 # Demo Execution
 
-## Add Cluster to Azure Arc
 
-Make sure you have logged into the cluster before executing the final step.
-
-```bash
-
-az aks get-credentials -g $NAME -n $NAME
-
-az connectedk8s connect --resource-group $NAME --name $NAME --location $LOCATION
-
-```
 
 ## Setup the Secrets for the Gateway
 

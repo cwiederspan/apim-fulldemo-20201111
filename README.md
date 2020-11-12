@@ -17,7 +17,8 @@ Use this workshop to create a full demo of Azure API Management using a variety 
 
 3. [Setup Kubernetes Cluster](/02_azure-kubernetes/README.md)
 
-3. [Setup APIM Self-Hosted Gateway](/03_self-hosted-gateway/README.md)
+4. [Setup APIM Self-Hosted Gateway](/03_self-hosted-gateway/README.md)
 
 5. [Cluster Config](/04_cluster-info/README.md)
 
+6. [Setup Azure Arc](/05_azure-arc/README.md)
