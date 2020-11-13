@@ -1,11 +1,13 @@
 
+# Setup APIM Product and API
+
 ```bash
 
 az apim product create \
 --product-name Private \
 --resource-group $NAME \
 --service-name $NAME \
---description 'Allows access to on-prem APIs hosted in Kubernetes' \
+--description 'Group of APIs that allow access to on-prem APIs hosted in Kubernetes' \
 --state published
 
 # [--approval-required]
