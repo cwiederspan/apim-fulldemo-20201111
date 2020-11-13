@@ -42,7 +42,8 @@ Azure Arc enables quick and easy configuration of FluxCD on your cluster.
 # --cluster-type connectedClusters \
 # --enable-helm-operator true \
 # --git-branch main \
-# --git-path flux
+# --git-path flux \
+# --git-readonly
 ```
 
 ## Verify Setup
