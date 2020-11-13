@@ -32,11 +32,11 @@ Azure Arc enables quick and easy configuration of FluxCD on your cluster.
 ```bash
 # TODO: Here's how you can do it with the CLI
 # az k8sconfiguration create \
-# --name apim-demo \
+# --name flux \
 # --cluster-name $NAME \
 # --resource-group $NAME \
-# --operator-instance-name apim-demo \
-# --operator-namespace apim-demo \
+# --operator-instance-name flux \
+# --operator-namespace flux \
 # --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
 # --scope cluster \
 # --cluster-type connectedClusters \
