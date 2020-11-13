@@ -15,6 +15,6 @@ az apim create \
   --sku-name Developer \
   --virtual-network External
 
-  [--enable-client-certificate {false, true}]
-  [--enable-managed-identity {false, true}]
+  # [--enable-client-certificate {false, true}]
+  # [--enable-managed-identity {false, true}]
 ```

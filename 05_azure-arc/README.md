@@ -20,10 +20,6 @@ az extension update --name k8sconfiguration
 > NOTE: This requires the `$NAME` and `$LOCATION` variables set from the [prerequisites](/00_prequisites/README.md).
 
 ```bash
-# Make sure you have logged into the cluster before executing the final step.
-az aks get-credentials -g $NAME -n $NAME
-
-# Setup the connectiont to Azure Arc
 az connectedk8s connect --resource-group $NAME --name $NAME --location $LOCATION
 ```
 
@@ -40,8 +36,8 @@ Azure Arc enables quick and easy configuration of FluxCD on your cluster.
 # --cluster-name $NAME \
 # --resource-group $NAME \
 # --operator-instance-name apim-demo \
-# --operator-namespace cluster-config \
-# --repository-url https://github.com/Azure/arc-k8s-demo \
+# --operator-namespace apim-demo \
+# --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
 # --scope cluster \
 # --cluster-type connectedClusters \
 # --enable-helm-operator true \

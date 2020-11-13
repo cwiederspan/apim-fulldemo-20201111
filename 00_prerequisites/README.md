@@ -5,7 +5,7 @@
 These variables will be used throughout the demo.
 
 ```bash
-NAME=cdw-apimgmtdemo-20201111
+NAME=cdw-apimgmt-20201112
 
 # Azure Arc is limited to East US (among a few others), so use it
 LOCATION=eastus
