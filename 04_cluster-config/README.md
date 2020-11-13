@@ -1,5 +1,13 @@
 # Setup Config and Secrets
 
+## Connect to the AKS Cluster
+
+> NOTE: This requires the `$NAME` and `$LOCATION` variables set from the [prerequisites](/00_prequisites/README.md).
+
+```bash
+az aks get-credentials -g $NAME -n $NAME
+```
+
 ## Secrets for APIM Gateway
 
 When you create the self-hosted gateway for the API Management service, you
