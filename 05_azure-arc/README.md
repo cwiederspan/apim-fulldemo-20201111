@@ -44,6 +44,7 @@ Azure Arc enables quick and easy configuration of FluxCD on your cluster.
 # --repository-url https://github.com/Azure/arc-k8s-demo \
 # --scope cluster \
 # --cluster-type connectedClusters \
+# --enable-helm-operator true \
 # --git-branch main \
 # --git-path flux
 ```

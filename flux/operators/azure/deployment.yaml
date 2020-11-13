@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: azure-operator
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: azoperator
+  namespace: azure-operator
+spec:
+  releaseName: azoperator
+  targetNamespace: azure-operator
+  chart:
+    git: git@github.com:Azure/azure-service-operator
+    ref: master
+    path: charts/azure-service-operator
+  timeout: 300
+  resetValues: false
+  wait: false
+  forceUpgrade: false
+  values:
+    image:
+      repository: mcr.microsoft.com/k8s/azureserviceoperator:latest
+  valuesFrom:
+  - secretKeyRef:
+      name: azure-secrets
+      namespace: azure-operator
+      key: secrets.yaml
+      optional: false
