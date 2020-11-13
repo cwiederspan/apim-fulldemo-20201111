@@ -1,2 +1,3 @@
-config.yaml
 scratch.txt
+config**.yaml
+!config-sample.yaml
