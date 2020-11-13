@@ -9,9 +9,9 @@ steps below.
 ```bash
 # Create the secret - you get this value from the Azure Portal
 # when you setup the self-hosted gateway.
-kubectl create secret generic kubernetes-token \
---from-literal=value="GatewayKey xxxyyyzzz==" \
---type=Opaque
+# kubectl create secret generic kubernetes-token \
+# --from-literal=value="GatewayKey xxxyyyzzz==" \
+# --type=Opaque
 ```
 
 # Setup Helm Secrets for Azure Operator
