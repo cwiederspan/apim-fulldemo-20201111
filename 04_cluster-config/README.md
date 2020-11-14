@@ -8,20 +8,6 @@
 az aks get-credentials -g $NAME -n $NAME
 ```
 
-## Secrets for APIM Gateway
-
-When you create the self-hosted gateway for the API Management service, you
-will be provided with instructions for deployment that will look like the
-steps below.
-
-```bash
-# Create the secret - you get this value from the Azure Portal
-# when you setup the self-hosted gateway.
-# kubectl create secret generic kubernetes-token \
-# --from-literal=value="GatewayKey xxxyyyzzz==" \
-# --type=Opaque
-```
-
 # Setup Helm Secrets for Azure Operator
 
 Create a Service Principal that will be used by the Azure Operator to communicate back to
