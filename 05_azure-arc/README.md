@@ -1,19 +1,6 @@
 # Setup Azure Arc
 
-We will use Azure Arc to inturn setup FluxCD to apply cluster resources to Kubernets.
-
-## Azure CLI Prerequisites
-
-As part of this demo, make sure all of the preview extensions are up to date.
-
-```bash
-az extension add --name connectedk8s
-az extension add --name k8sconfiguration
-
-az extension update --name aks-preview
-az extension update --name connectedk8s
-az extension update --name k8sconfiguration
-```
+We will use Azure Arc to in turn setup FluxCD to apply cluster resources to Kubernets.
 
 ## Add Cluster to Azure Arc
 
@@ -31,19 +18,43 @@ Azure Arc enables quick and easy configuration of FluxCD on your cluster.
 
 ```bash
 # TODO: Here's how you can do it with the CLI
-# az k8sconfiguration create \
-# --name flux \
-# --cluster-name $NAME \
-# --resource-group $NAME \
-# --operator-instance-name flux \
-# --operator-namespace flux \
-# --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
-# --scope cluster \
-# --cluster-type connectedClusters \
-# --enable-helm-operator true \
-# --git-branch main \
-# --git-path flux \
-# --git-readonly
+az k8sconfiguration create \
+--name flux \
+--cluster-name $NAME \
+--resource-group $NAME \
+--scope cluster \
+--cluster-type connectedClusters \
+--operator-namespace flux \
+--operator-instance-name flux \
+--repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
+--git-branch main \
+--git-path flux \
+--git-readonly
+--enable-helm-operator \
+--helm-operator-version='1.2.0' \
+--helm-operator-params='--set helm.versions=v3'
+
+# Demo from https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/use-gitops-with-helm
+az k8sconfiguration create \
+--name azure-arc-sample \
+--cluster-name $NAME \
+--resource-group $NAME \
+--scope namespace \
+--cluster-type connectedClusters \
+--repository-url https://github.com/Azure/arc-helm-demo.git \
+--operator-instance-name fluxhelm \
+--operator-namespace arc-k8s-demo \
+--operator-params='--git-readonly --git-path=releases' \
+--enable-helm-operator \
+--helm-operator-version='1.2.0' \
+--helm-operator-params='--set helm.versions=v3'
+
+az k8sconfiguration delete \
+--name azure-arc-sample \
+--cluster-name $NAME \
+--cluster-type connectedClusters \
+--resource-group $NAME
+
 ```
 
 ## Verify Setup

@@ -3,8 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apim-gateway
-  namespace: apim-gateway
+  name: apim-gateway-app
 spec:
   replicas: 1
   selector:
@@ -51,8 +50,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: apim-gateway
-  namespace: apim-gateway
+  name: apim-gateway-svc
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local

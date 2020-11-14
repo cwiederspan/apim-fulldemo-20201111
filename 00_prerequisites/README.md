@@ -16,3 +16,16 @@ LOCATION=eastus
 ```bash
 az group create -n $NAME -l $LOCATION
 ```
+
+## Azure CLI Prerequisites
+
+As part of this demo, make sure all of the preview extensions are up to date.
+
+```bash
+az extension add --name connectedk8s
+az extension add --name k8sconfiguration
+
+az extension update --name aks-preview
+az extension update --name connectedk8s
+az extension update --name k8sconfiguration
+```
