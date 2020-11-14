@@ -33,21 +33,19 @@ kubectl apply -f config.yaml
 # Create
 az k8sconfiguration create \
 --name apim-gateway \
---cluster-name $NAME \
 --resource-group $NAME \
+--cluster-name $NAME \
 --cluster-type connectedClusters \
 --scope namespace \
 --operator-namespace apim-gateway \
---operator-instance-name apim-gateway \
---repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
---git-branch main \
---git-path 'flux/apim-gateway' \
---git-readonly
+--operator-instance-name flux \
+--operator-params '--git-readonly --git-branch main --git-path flux/apim-gateway' \
+--repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git
 
 # Delete
 az k8sconfiguration delete \
---name azure-arc-sample \
+--name apim-gateway \
+--resource-group $NAME \
 --cluster-name $NAME \
---cluster-type connectedClusters \
---resource-group $NAME
+--cluster-type connectedClusters
 ```
