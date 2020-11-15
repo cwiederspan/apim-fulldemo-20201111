@@ -40,8 +40,8 @@ az k8sconfiguration create \
 --scope cluster \
 --operator-namespace azure-operator \
 --operator-instance-name flux \
---operator-params '--git-readonly --git-branch main --git-path flux/operators/azure --manifest-generation=true --git-poll-interval=2m' \
 --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
+--operator-params '--git-readonly --git-branch main --git-path flux/operators/azure --manifest-generation=true --git-poll-interval=3m' \
 --enable-helm-operator \
 --helm-operator-version='1.2.0' \
 --helm-operator-params='--set helm.versions=v3'
