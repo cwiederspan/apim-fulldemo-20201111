@@ -12,7 +12,7 @@ spec:
   releaseName: azoperator
   targetNamespace: azure-operator
   chart:
-    git: git@github.com:Azure/azure-service-operator
+    git: https://github.com/Azure/azure-service-operator
     ref: master
     path: charts/azure-service-operator
   timeout: 300
