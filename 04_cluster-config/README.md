@@ -8,7 +8,7 @@
 az aks get-credentials -g $NAME -n $NAME
 ```
 
-# Setup Helm Secrets for Azure Operator
+## Setup Helm Secrets for Azure Operator
 
 Create a Service Principal that will be used by the Azure Operator to communicate back to
 Azure when it needs to create resources in the subscription. After creating the SP using the script below, copy the resulting values into the same config.yaml file as above.

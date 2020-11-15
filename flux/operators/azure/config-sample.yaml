@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: azure-operator
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: azure-secrets
+  namespace: azure-operator
+type: Opaque
+stringData:
+  secrets.yaml: |-
+    azureSubscriptionID: <<YOUR_SUBSCRIPTION_ID>>
+    azureTenantID: <<YOUR_TENANT_ID>>
+    azureClientID: <<YOUR_CLIENT_APP_ID>>
+    azureClientSecret: <<YOUR_CLIENT_SECRET>>
