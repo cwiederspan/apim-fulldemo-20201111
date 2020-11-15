@@ -28,6 +28,8 @@ kubectl apply -f config.yaml
 
 > NOTE: The `operator-namespace` must match the value provided in [kustomization.yaml](kustomization.yaml).
 
+> NOTE: This must be a **cluster** scoped install.
+
 ```bash
 # Create
 az k8sconfiguration create \
@@ -35,10 +37,10 @@ az k8sconfiguration create \
 --resource-group $NAME \
 --cluster-name $NAME \
 --cluster-type connectedClusters \
---scope namespace \
+--scope cluster \
 --operator-namespace azure-operator \
 --operator-instance-name flux \
---operator-params '--git-readonly --git-branch main --git-path flux/operators/azure --manifest-generation=true' \
+--operator-params '--git-readonly --git-branch main --git-path flux/operators/azure --manifest-generation=true --git-poll-interval=2m' \
 --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
 --enable-helm-operator \
 --helm-operator-version='1.2.0' \

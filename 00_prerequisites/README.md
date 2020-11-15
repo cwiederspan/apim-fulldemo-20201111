@@ -18,7 +18,7 @@ az extension update --name k8sconfiguration
 These variables will be used throughout the demo.
 
 ```bash
-NAME=cdw-apimgmt-20201112
+NAME=cdw-apimgmt-20201113
 
 # Azure Arc is limited to East US (among a few others), so use it
 LOCATION=eastus
