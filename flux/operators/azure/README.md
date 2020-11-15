@@ -38,7 +38,7 @@ az k8sconfiguration create \
 --scope namespace \
 --operator-namespace azure-operator \
 --operator-instance-name flux \
---operator-params '--git-readonly --git-branch main --git-path flux/operators/azure' \
+--operator-params '--git-readonly --git-branch main --git-path flux/operators/azure --manifest-generation=true' \
 --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
 --enable-helm-operator \
 --helm-operator-version='1.2.0' \
