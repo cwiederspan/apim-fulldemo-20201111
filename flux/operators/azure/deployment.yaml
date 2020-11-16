@@ -6,20 +6,20 @@ metadata:
 spec:
   releaseName: azoperator
   targetNamespace: azure-operator
-  forceUpgrade: true
-  resetValues: false
-  wait: false
   chart:
     git: https://github.com/Azure/azure-service-operator
     ref: master
     path: charts/azure-service-operator
   timeout: 300
+  resetValues: false
+  wait: false
+  forceUpgrade: false
   values:
     image:
       repository: mcr.microsoft.com/k8s/azureserviceoperator:latest
   valuesFrom:
   - secretKeyRef:
       name: azure-secrets
-      namespace: azure-operator
+      namespace: azure-resources
       key: secrets.yaml
       optional: false
