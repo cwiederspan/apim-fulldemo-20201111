@@ -16,7 +16,7 @@ spec:
   timeout: 300
   values:
     image:
-      repository: mcr.microsoft.com/k8s/azure-service-operator:latest
+      repository: mcr.microsoft.com/k8s/azureserviceoperator:latest
   valuesFrom:
   - secretKeyRef:
       name: azure-secrets
