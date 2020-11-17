@@ -20,6 +20,6 @@ spec:
   valuesFrom:
   - secretKeyRef:
       name: azure-secrets
-      namespace: azure-resources
+      namespace: azure-operator
       key: secrets.yaml
       optional: false
