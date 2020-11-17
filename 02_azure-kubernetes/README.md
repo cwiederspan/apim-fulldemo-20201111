@@ -7,7 +7,7 @@ Use the below CLI commands to provision Azure Kubernetes Service (AKS) cluster.
 ## Create Kubernetes Cluster
 
 ```bash
-
+# Create cluster
 az aks create \
 --resource-group $NAME \
 --name $NAME \
@@ -17,4 +17,9 @@ az aks create \
 --enable-managed-identity
 
 # --enable-addons monitoring
+
+# Delete cluster
+az aks delete \
+--resource-group $NAME \
+--name $NAME
 ```
