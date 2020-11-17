@@ -1,3 +1,4 @@
 bases:
   - ./apim-gateway/
   - ./operators/azure/
+  = ./svcdisc-demo/
