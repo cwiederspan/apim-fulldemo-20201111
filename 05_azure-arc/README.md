@@ -17,51 +17,27 @@ Azure Arc enables quick and easy configuration of FluxCD on your cluster.
 ![Azure Arch Configuration](/assets/arc-screenshot-1.png)
 
 ```bash
-# TODO: Here's how you can do it with the CLI
+# Create the Flux config with the CLI
 az k8sconfiguration create \
---name my-flux \
+--name flux-cluster-01 \
 --cluster-name $NAME \
 --resource-group $NAME \
 --scope cluster \
 --cluster-type connectedClusters \
---operator-namespace flux \
---operator-instance-name my-flux \
+--operator-namespace flux-cluster-01 \
+--operator-instance-name flux \
 --operator-params '--git-readonly --git-branch main --git-path flux --manifest-generation=true --git-poll-interval=3m' \
 --repository-url https://github.com/cwiederspan/apim-fulldemo-20201111.git \
 --enable-helm-operator \
 --helm-operator-version='1.2.0' \
 --helm-operator-params='--set helm.versions=v3'
 
+# Delete the Flux config with the CLI
 az k8sconfiguration delete \
 --name my-flux \
 --cluster-name $NAME \
 --cluster-type connectedClusters \
 --resource-group $NAME
-
-
-
-
-# Demo from https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/use-gitops-with-helm
-az k8sconfiguration create \
---name azure-arc-sample \
---cluster-name $NAME \
---resource-group $NAME \
---scope namespace \
---cluster-type connectedClusters \
---repository-url https://github.com/Azure/arc-helm-demo.git \
---operator-instance-name fluxhelm \
---operator-namespace arc-k8s-demo \
---operator-params='--git-readonly --git-path=releases' \
---enable-helm-operator \
---helm-operator-version='1.2.0' \
---helm-operator-params='--set helm.versions=v3'
-
-az k8sconfiguration delete \
---name azure-arc-sample \
---cluster-name $NAME \
---cluster-type connectedClusters \
---resource-group $NAME
-
 ```
 
 ## Verify Setup

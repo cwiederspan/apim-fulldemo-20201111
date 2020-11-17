@@ -1,6 +1,28 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: apim-gateway
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: apim-gateway-token
+  namespace: apim-gateway
+type: Opaque
+stringData:
+  value: "GatewayKey <<YOUR_APIM_GATEWAY_KEY>>"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apim-gateway-env
+  namespace: apim-gateway
+data:
+  config.service.endpoint: "https://<<YOUR_APIM_NAME>>.management.azure-api.net/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<<YOUR_RG_NAME>>/providers/Microsoft.ApiManagement/service/<<YOUR_APIM_NAME>>?api-version=2019-12-01"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: azure-operator
 ---
 apiVersion: v1
