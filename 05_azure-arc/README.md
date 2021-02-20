@@ -34,7 +34,7 @@ az k8sconfiguration create \
 
 # Delete the Flux config with the CLI
 az k8sconfiguration delete \
---name my-flux \
+--name flux-cluster-01 \
 --cluster-name $NAME \
 --cluster-type connectedClusters \
 --resource-group $NAME
